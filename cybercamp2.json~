@@ -1,0 +1,23 @@
+{ 
+    "pc_clone_spec1" : [{"clone_role": "NORMAL",
+                   "clone_storage_alloc": "ONDEMAND",
+                   "clone_type": "FULL",
+                   "clone_vh_id": 2,
+                   "source_snapshot": "GOLDEN_MASTER",
+                   "clone_snapshot": "GOLDEN_MASTER",
+                   "clone_datastore": "LOCAL106"}],
+    "pc_clone_spec2" : [{"clone_role": "NORMAL",
+                   "clone_storage_alloc": "ONDEMAND",
+                   "clone_type": "FULL",
+                   "clone_vh_id": 1,
+                   "source_snapshot": "GOLDEN_MASTER",
+                   "clone_snapshot": "GOLDEN_MASTER",
+                   "clone_datastore": "LOCAL107"}],
+    "pc_clone_spec3" : [{"clone_role": "NORMAL",
+                   "clone_storage_alloc": "ONDEMAND",
+                   "clone_type": "FULL",
+                   "clone_vh_id": 3,
+                   "source_snapshot": "GOLDEN_MASTER",
+                   "clone_snapshot": "GOLDEN_MASTER",
+                   "clone_datastore": "LOCAL108"}]
+}
