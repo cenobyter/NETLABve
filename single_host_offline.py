@@ -19,7 +19,7 @@ def single_host_offline(*,offline_host):
         #this will be used to verify that the pod exists on the server
         pc = tapi.pod_pc_get(pod_id=pod['pod_id'],pl_index=1)
         #check to see that the vm exists and it exists on the specified host
-        if pc['pc_type'] !=PCType.ABSENT and offline_host==pc['vh_name']:
+        if pc['pc_type'] !=PCType.ABSENT and offline_host == pc['vh_name']:
             #take pod offline and provide console feedback on activity
             print('taking pod '+ str(pod['pod_id'])+' offline')
             tapi.pod_state_change(pod_id=['pod_id'],state='OFFLINE')
