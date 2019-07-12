@@ -16,11 +16,11 @@ def student_age_removal(max_day_age=365):
     delta_time = datetime.timedelta(days=max_day_age)
     
     
-    for user in tapi.user_account_list(properties=‘all’):
+    for user in tapi.user_account_list(properties='all'):
         #verify user is a student before proceeding
-        if user[‘acc_type’] == AccountType(’S’) \
-            #verify that the last login value is not none, as this would result in a type error during removal
+        #verify that the last login value is not none, as this would result in a type error during removal
+        #finally check if last login was before the value of today minus the delta time
+        if user['acc_type'] == AccountType('S')\
             and tapi.user_account_get(acc_id=user['acc_id'], properties='all')['acc_last_login'] != None\
-            #finally check if last login was before the value of today minus the delta time
             and tapi.user_account_get(acc_id=user['acc_id'], properties='all')['acc_last_login'] < (today-delta_time):
-                tapi.user_account_remove(acc_id=user[‘acc_id’])
+                tapi.user_account_remove(acc_id=user['acc_id'])
