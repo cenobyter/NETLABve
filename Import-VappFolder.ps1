@@ -23,10 +23,10 @@ function Import-VappFolder{
     Get-Childitem -Recurse -filter *.ov* $SourceFolder | Where-Object{$_.name -match ".ov[af]"} | foreach-object {
         #folder deployment (location) does not seem to work the way I want it to
         if($DestinationFolder -ne ""){
-            Import-Vapp -Source $_.fullname -Datastore $vmDataStore -VMHost $vmHost -InventoryLocation $vmFolder -whatif
+            Import-Vapp -Source $_.fullname -Datastore $vmDataStore -VMHost $vmHost -InventoryLocation $vmFolder -force
         }
         else{
-            Import-Vapp -Source $_.fullname -Datastore $vmDataStore -VMHost $vmHost -whatif
+            Import-Vapp -Source $_.fullname -Datastore $vmDataStore -VMHost $vmHost -force
         }
     }
 }
